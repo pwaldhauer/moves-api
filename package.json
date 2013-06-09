@@ -1,6 +1,6 @@
 {
   "name": "moves-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NodeJS wrapper for the Moves.app API",
   "main": "./lib/MovesApi.js",
 
@@ -14,7 +14,6 @@
   },
 
   "devDependencies": {
-    "nconf": "*",
     "mocha": "*"
   },
 

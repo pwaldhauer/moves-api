@@ -1,16 +1,13 @@
 var assert = require('assert');
-var nconf = require('nconf');
 var fs = require('fs');
 
-if(!fs.existsSync('./config.json')) {
+if(!fs.existsSync(__dirname + '/../config.json')) {
     throw new Error('Please create a valid config.json to run the tests. (See config.sample.json)');
 }
 
-nconf.file('./config.json');
-
 var MovesApi = require(__dirname + '/../lib/MovesApi').MovesApi;
 
-var real_config = nconf.get('moves');
+var real_config = require(__dirname + '/../config');
 
 var mock_config = {
     clientId: 'id',
@@ -30,8 +27,6 @@ describe('MovesApi', function() {
         it('should return an error if clientId or clientSecret are not set', function(done) {
             var moves = new MovesApi();
             var url = moves.generateAuthUrl();
-
-            console.log(url);
 
             assert.equal(url instanceof Error, true, 'Return value should be of type Error');
 

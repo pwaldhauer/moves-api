@@ -1,13 +1,11 @@
 {
-  "moves": {
-    "clientId": "",
-    "clientSecret": "",
-    "redirectUri": "http://localhost:3000/auth",
-    "accessToken": "",
-    "goodDay": "20130401",
-    "goodRange": {
-      "from": "20130401",
-      "to": "20130405"
-    }
+  "clientId": "",
+  "clientSecret": "",
+  "redirectUri": "http://localhost:3000/auth",
+  "accessToken": "",
+  "goodDay": "20130401",
+  "goodRange": {
+    "from": "20130401",
+    "to": "20130405"
   }
 }
