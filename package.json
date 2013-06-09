@@ -4,7 +4,10 @@
   "description": "NodeJS wrapper for the Moves.app API",
   "main": "./lib/MovesApi.js",
 
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pwaldhauer/moves-api.git"
+  },
 
   "dependencies": {
     "request": "*"
