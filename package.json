@@ -3,29 +3,29 @@
   "version": "0.0.2",
   "description": "NodeJS wrapper for the Moves.app API",
   "main": "./lib/MovesApi.js",
-
   "repository": {
     "type": "git",
     "url": "https://github.com/pwaldhauer/moves-api.git"
   },
-
   "dependencies": {
-    "request": "*"
+    "request": "*",
+    "moment": "latest"
   },
-
   "devDependencies": {
     "mocha": "*"
   },
-
   "scripts": {
     "test": "mocha --reporter spec"
   },
-
   "author": {
     "name": "Philipp Waldhauer",
     "email": "ich@philippwaldhauer.de",
     "url": "http://knuspermagier.de"
   },
-
+  "contributors": [{
+    "name": "Ali Karbassi",
+    "email": "ali@karbassi.com",
+    "url": "http://karbassi.com"
+  }],
   "license": "MIT"
 }
