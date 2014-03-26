@@ -11,13 +11,14 @@ var moves = new movesApi({
     "clientSecret": "ClientSecret",
     "redirectUri": "RedirectUri",
     "accessToken": "",
+    "refreshToken" : "",
 });
 
 // Redirect your user to this url
 var url = moves.generateAuthUrl();
 
-moves.getAccessToken(code_from_redirect, function(err, accessToken) {
-    moves.options.accessToken = accessToken;
+moves.getAccessToken(code_from_redirect, function(err, authData) {
+    moves.options.accessToken = authData.accessToken;
 
     moves.getProfile(function(err, profile) {
         console.log(profile);
