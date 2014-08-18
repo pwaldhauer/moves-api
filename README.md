@@ -18,7 +18,7 @@ var moves = new movesApi({
 var url = moves.generateAuthUrl();
 
 moves.getAccessToken(code_from_redirect, function(err, authData) {
-    moves.options.accessToken = authData.accessToken;
+    moves.options.accessToken = authData.access_token;
 
     moves.getProfile(function(err, profile) {
         console.log(profile);
