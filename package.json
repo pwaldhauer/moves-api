@@ -26,6 +26,12 @@
     "name": "Ali Karbassi",
     "email": "ali@karbassi.com",
     "url": "http://karbassi.com"
-  }],
+  },
+  {
+    "name": "Mark Stosberg",
+    "email": "mark@rideamigos.com",
+    "url": "http://mark.stosberg.com"
+  }
+],
   "license": "MIT"
 }
