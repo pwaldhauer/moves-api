@@ -50,6 +50,234 @@ Returns the profile of the authenticated user. The callback should be a `functio
 
 Returns storylines! `options` may just be a string identifying a single day (`20130401`) or an object to specify a date range or include the trackPoints: `{ from: "20130401", to: "20130405", trackPoints: false}`.
 
+### MovesAPI#getSummaries(options, cb)
+
+Returns [Daily summaries](https://dev.moves-app.com/docs/api_summaries)
+
+**Arguments** 
+
+ * `options` with the following possible keys:
+   * date
+   * week
+   * month
+   * updatedSince
+   * pastDays
+   * from 
+   * to
+ * `callback(err,body)`
+
+**Example response**
+
+ ```json
+[{
+    "date": "20130315",
+    "summary": [
+        {
+            "activity": "walking",
+            "group": "walking",
+            "duration": 2133,
+            "distance": 1847,
+            "steps": 2500,
+            "calories": 60
+        },
+        {
+            "activity": "zumba",
+            "duration": 1200,
+            "calories": 500
+        },
+        ...
+    ],
+    "caloriesIdle": 1785,
+    "lastUpdate": "20130317T121143Z"
+},
+...
+]
+```
+
+### MovesAPI#getActivities(options, cb)
+
+Returns [Daily activities](https://dev.moves-app.com/docs/api_activities)
+
+**Arguments** 
+
+ * `options` with the following possible keys:
+   * date
+   * week
+   * month
+   * updatedSince
+   * from 
+   * to
+ * `callback(err,body)`
+
+**Example response:**
+
+ ```json
+[
+    {
+        "date": "20121212",
+        "summary": [
+            {
+                "activity": "walking",
+                "group": "walking",
+                "duration": 3333,
+                "distance": 3333,
+                "steps": 3333,
+                "calories": 300
+            }
+        ],
+        "segments": [
+            {
+                "type": "move",
+                "startTime": "20121212T071430+0200",
+                "endTime": "20121212T074617+0200",
+                "activities": [
+                    {
+                        "activity": "walking",
+                        "group": "walking",
+                        "manual": false,
+                        "startTime": "20121212T071430+0200",
+                        "endTime": "20121212T072732+0200",
+                        "duration": 782,
+                        "distance": 1251,
+                        "steps": 1353,
+                        "calories": 99
+                    },
+                    {
+                        "activity": "transport",
+                        "group": "transport",
+                        "manual": false,
+                        "startTime": "20121212T072732+0200",
+                        "endTime": "20121212T074616+0200",
+                        "duration": 1124,
+                        "distance": 8443
+                    }
+                ],
+                "lastUpdate": "20130317T121143Z"
+            },
+            {
+                "type": "place",
+                "startTime": "20121212T074617+0200",
+                "endTime": "20121212T100051+0200",
+                "activities": [
+                    {
+                        "activity": "walking_on_treadmill",
+                        "group": "walking",
+                        "manual": true,
+                        "duration": 270,
+                        "steps": 303,
+                        "calories": 99
+                    }
+                ],
+                "lastUpdate": "20130317T121143Z"
+            },
+        ],
+        "caloriesIdle": 1785,
+        "lastUpdate": "20130317T121143Z"
+    },
+    {
+        "date": "20121213",
+        "summary": null,
+        "segments": null,
+        "caloriesIdle": 1785
+    }
+]
+```
+
+### MovesAPI#getActivitiesList(cb)
+
+Returns [Activity List](https://dev.moves-app.com/docs/api_activity_list)
+
+Lists supported activities. See [table of activities](https://dev.moves-app.com/docs/api_activity_list#activity_table) for current list.
+
+
+**Arguments** 
+
+ * `callback(err,body)`
+
+**Example response:**
+
+ ```json
+[
+    {
+        "activity": "aerobics",
+        "geo": false,
+        "place": true,
+        "color": "bc4fff",
+        "units": "duration,calories"
+    },
+    {
+        "activity": "badminton",
+        "geo": false,
+        "place": true,
+        "color": "11d1cb",
+        "units": "duration,calories"
+    },
+    ...
+]
+```
+
+
+### MovesAPI#getPlaces(options, cb)
+
+Returns [Daily places](https://dev.moves-app.com/docs/api_places)
+
+**Arguments** 
+
+ * `options` with the following possible keys:
+   * date
+   * week
+   * month
+   * updatedSince
+   * from
+   * to
+ * `callback(err,body)`
+
+**Example response:**
+
+ ```json
+[
+    {
+        "date": "20121212",
+        "segments": [
+            {
+                "type": "place",
+                "startTime": "20121212T000000+0200",
+                "endTime": "20121212T071430+0200",
+                "place": {
+                    "id": 1,
+                    "type": "unknown",
+                    "location": {
+                        "lat": 55.55555,
+                        "lon": 33.33333
+                    }
+                },
+                "lastUpdate": "20130317T121143Z"
+            },
+            {
+                "type": "place",
+                "startTime": "20121212T100715+0200",
+                "endTime": "20121212T110530+0200",
+                "place": {
+                    "id": 4,
+                    "name": "test",
+                    "type": "foursquare",
+                    "foursquareId": "4df0fdb17d8ba370a011d24c",
+                    "foursquareCategoryIds": ["4bf58dd8d48988d125941735"],
+                    "location": {
+                        "lat": 55.55555,
+                        "lon": 33.33333
+                    }
+                },
+                "lastUpdate": "20130317T121143Z"
+            }
+    },
+    {
+        "date": "20121213",
+        "segments": null
+    }
+]
+```
+
 ## Contribute
 
 Feel free to contribute and add the other API endpoints! :)
