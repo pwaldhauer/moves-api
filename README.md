@@ -42,6 +42,10 @@ If provided with the access code given back from the Moves.app API this will get
 
 Verifies the configured access token. The callback should be a `function(err) {}`.
 
+### MovesApi#refreshToken(cb)
+
+If configured with the refresh token, this will request a new access token, refresh token, and token expiration time. The callback should be a `function(err, authData) {}`.
+
 ### MovesApi#getProfile(cb)
 
 Returns the profile of the authenticated user. The callback should be a `function(err, profile) {}`.
