@@ -36,7 +36,7 @@ Generates the URL the user needs to visit to start the authentication. `scope` s
 
 ### MovesApi#getAccessToken(code, cb)
 
-If provided with the access code given back from the Moves.app API this will get you the access token to use for the other requests. The callback should be a `function(err, accessToken) {}`.
+If provided with the access code given back from the Moves.app API this will get you the access token, refresh token, and token expiration time to use for the other requests. The callback should be a `function(err, authData) {}`.
 
 ### MovesApi#verifyToken(cb)
 
