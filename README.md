@@ -282,6 +282,10 @@ Returns [Daily places](https://dev.moves-app.com/docs/api_places)
 ]
 ```
 
+## Additional Examples
+
+In the `examples` directory you can find some additional example uses of the API.
+
 ## Contribute
 
 Feel free to contribute and add the other API endpoints! :)
